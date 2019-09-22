@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    var photos = [String]()
+    let dataSource = PhotoDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,42 +17,30 @@ class ViewController: UITableViewController {
         title = "S View"
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        tableView.dataSource = dataSource
         loadImages()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
+            vc.selectedImage = dataSource.photos[indexPath.row]
+            vc.imageNumber = indexPath.row + 1
+            vc.totalImageNumber = dataSource.photos.count
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func loadImages() {
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
-        
+         
         for item in items {
             if item.hasPrefix("nssl") {
-                photos.append(item)
+                dataSource.photos.append(item)
             }
         }
-        
-        photos.sort()  
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photos.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Photo", for: indexPath)
-        cell.textLabel?.text = photos[indexPath.row]
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController{
-            vc.selectedImage = photos[indexPath.row]
-            vc.imageNumber = indexPath.row + 1
-            vc.totalImageNumber = photos.count
-            navigationController?.pushViewController(vc, animated: true)
-        }
-    }
-
-
+        dataSource.photos.sort()
+     }
 }
 
