@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, Storyboarded {
     var selectedImage: String?
     var imageView: UIImageView!
     var imageNumber = 0

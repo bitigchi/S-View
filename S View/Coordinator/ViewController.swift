@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, Storyboarded {
+    weak var coordinator: MainCoordinator?
     let dataSource = PhotoDataSource()
     
     override func viewDidLoad() {
