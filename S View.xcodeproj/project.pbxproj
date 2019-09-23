@@ -126,9 +126,9 @@
 		08C3578423379ECD00014840 /* S View */ = {
 			isa = PBXGroup;
 			children = (
-				08C357D62337C31800014840 /* PhotoDataSource.swift */,
 				08C3578923379ECD00014840 /* ViewController.swift */,
 				08C357B92337A02F00014840 /* DetailViewController.swift */,
+				08C357D62337C31800014840 /* PhotoDataSource.swift */,
 				08C3579623379ECD00014840 /* Info.plist */,
 				08C3578E23379ECD00014840 /* S_View.xcdatamodeld */,
 			);
