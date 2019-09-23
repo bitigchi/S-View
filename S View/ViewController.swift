@@ -41,6 +41,6 @@ class ViewController: UITableViewController {
             }
         }
         dataSource.photos.sort()
-     }
+    }
 }
 
