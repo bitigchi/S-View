@@ -33,7 +33,6 @@ class DetailViewController: UIViewController {
         
         title = "Photo \(imageNumber) of \(totalImageNumber)"
         navigationItem.largeTitleDisplayMode = .never
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
     }
     
