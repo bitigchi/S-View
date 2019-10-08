@@ -114,10 +114,17 @@
 				0828A9E42338EA4100B6D0B1 /* Coordinator.swift */,
 				0828A9E62338EA8900B6D0B1 /* Storyboarded.swift */,
 				0828A9E82338EA9B00B6D0B1 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		0867D7B5234C8ED900B428E0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				08C3578923379ECD00014840 /* ViewController.swift */,
 				08C357B92337A02F00014840 /* DetailViewController.swift */,
 			);
-			path = Coordinator;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		08C3577923379ECD00014840 = {
@@ -145,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				0828A9E32338EA3500B6D0B1 /* Coordinator */,
+				0867D7B5234C8ED900B428E0 /* Controllers */,
 				08C357D62337C31800014840 /* PhotoDataSource.swift */,
 				08C3579623379ECD00014840 /* Info.plist */,
 				08C3578E23379ECD00014840 /* S_View.xcdatamodeld */,
