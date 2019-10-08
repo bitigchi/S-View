@@ -16,7 +16,7 @@ class DetailViewController: UIViewController, Storyboarded {
 
     override func loadView() {
         view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: selectedImage ?? "Image not found")
