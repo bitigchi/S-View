@@ -22,10 +22,10 @@ class DetailViewController: UIViewController, Storyboarded {
         imageView.image = UIImage(named: selectedImage ?? "Image not found")
         imageView.contentMode = .scaleAspectFit
         view.addSubview(imageView)
-        NSLayoutConstraint.activate([imageView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-                                     imageView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
-                                     imageView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-                                     imageView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)])
+        NSLayoutConstraint.activate([imageView.topAnchor.constraint(equalTo: view.topAnchor),
+                                     imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                                     imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                                     imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor)])
     }
     
     override func viewDidLoad() {
